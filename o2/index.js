@@ -1,27 +1,36 @@
-let navn = document.querySelector ("#navn");
-let alder = document.querySelector ("#alder");
-let btn = document.querySelector ("#btn");
-let listVenn = document.querySelector ("#listVenn");
+const listVenner = document.querySelector ("#listVenner")
+const inpNavn = document.querySelector ("#inpNavn");
+const inpAlder = document.querySelector ("#inpAlder");
+const btn = document.querySelector ("#btn");
 
-/*let venner = [
+
+let venner = [
     { navn: "Snorre", alder: 28 },
     { navn: "Lise", alder: 24 },
     { navn: "Børre", alder: 32 }
-    ]*/
+  ]
+
+  function visVenner () {
 
     
-    
-function LeggTilNavn() {
+      listVenner.innerHTML = "<div>Navn</div><div>Alder</div>";
 
-    div1.innerHTML += `(<tr>  <td>${navn}</td> <td>${alder} </td>  </tr>)`
-    console.log (navn)
+      for(const venn of venner) {
+          listVenner.innerHTML+= `
+          <div class="vennetabell">${venn.navn}</div>
+          <div class="vennetabell">${venn.alder}</div>
+          `
+      }
+  }
+visVenner()
 
-    
+
+function leggTilVenn() {
+    const nyVenn = { navn: inpNavn.value, alder: inpAlder.value}
+    venner = [nyVenn, ...venner];
+    visVenner();
 }
 
-btn.onclick = LeggTilNavn;
-
-console.log (navn)
-   
+btn.onclick = leggTilVenn;
     
 

@@ -9,12 +9,30 @@ body {
     background-color:rgb(31, 30, 30);
 }
 
-div {
+#listVenner {
     display: grid;
     justify-content: center;
-    gap: 1rem;
     margin-top:1rem;
+    grid-template-columns: repeat(2,1fr);
+    width:12rem;
+    color: rgb(221, 37, 238);
+   
 }
+
+div.vennetabell {
+     border:1px solid rgb(221, 37, 238);
+     padding:1rem;
+     margin:0;
+     
+}
+
+
+.center {
+    display: grid;
+    justify-content: center;
+    gap:1rem;
+}
+
 
 
 
@@ -60,7 +78,7 @@ input {
     
 }
 
-li, p{
+p{
     font-size: 1rem;
     color: rgb(221, 37, 238);
     
